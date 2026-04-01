@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Launchpad
+Comment=Aplicaciones
+Exec=rofi -show drun -theme launchpad
+Icon=/home/ricardo/Imágenes/Launchpad.png
+Terminal=false
+Type=Application
+Categories=Utility;
+Path=
+StartupNotify=false
