@@ -27,7 +27,7 @@ sudo apt install rofi
 ```ini
 nano ~/.local/share/applications/launchpad.desktop
 ```
-y pegas el codigo .desktop
+  y pegas el codigo .desktop
 
 2. Crear carpeta de configuración de Rofi (si no existe)
 
@@ -40,7 +40,7 @@ mkdir -p ~/.config/rofi
 ```ini
 nano ~/.config/rofi/launchpad.rasi
 ```
-y pegas el codigo .rasi
+  y pegas el codigo .rasi
 
 ## ▶️ Ejecutar Launchpad
 
@@ -55,6 +55,8 @@ Busca: Launchpad
 ```ini
 rofi -show drun -theme ~/.config/rofi/launchpad.rasi
 ```
+
+
 
 4. (Opcional) Añadir icono
 
