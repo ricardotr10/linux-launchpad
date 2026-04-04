@@ -11,13 +11,14 @@ Instala Rofi si aún no lo tienes:
 ```bash
 sudo apt update
 ```
+
 ```bash
 sudo apt install rofi
 ```
 
-# ⚙️ Instalación paso a paso
+## ⚙️ Instalación paso a paso
 
-# 🚀 Launchpad con Rofi
+### 🚀 Launchpad con Rofi
 
 1 Crear el archivo .desktop
 
@@ -41,7 +42,7 @@ nano ~/.config/rofi/launchpad.rasi
 
 Coloca Launchpad.png en una ruta accesible y asegúrate de que esté bien referenciado en el .desktop.
 
-# ▶️ Ejecutar Launchpad
+## ▶️ Ejecutar Launchpad
 
 Puedes abrirlo de dos formas:
 
