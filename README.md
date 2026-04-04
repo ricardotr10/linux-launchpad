@@ -22,19 +22,19 @@ sudo apt install rofi
 
 ### 🚀 Launchpad con Rofi
 
-1 Crear el archivo .desktop
+1. Crear el archivo .desktop
 
 ```ini
 nano ~/.local/share/applications/launchpad.desktop
 ```
 
-2 Crear carpeta de configuración de Rofi (si no existe)
+2. Crear carpeta de configuración de Rofi (si no existe)
 
 ```ini
 mkdir -p ~/.config/rofi
 ```
 
-3 Crear el tema .rasi
+3. Crear el tema .rasi
 
 ```ini
 nano ~/.config/rofi/launchpad.rasi
@@ -54,7 +54,7 @@ Busca: Launchpad
 rofi -show drun -theme ~/.config/rofi/launchpad.rasi
 ```
 
-4 (Opcional) Añadir icono
+4. (Opcional) Añadir icono
 
 Coloca Launchpad.png en una ruta accesible y asegúrate de que esté bien referenciado en el .desktop.
 
@@ -69,6 +69,4 @@ click derecho y pon editar aplicacion
 asignas el icono, lo guardas y lo arrastras al plank:
 
 <img width="558" height="295" alt="Captura de pantalla_2026-04-04_07-33-36" src="https://github.com/user-attachments/assets/bba0536e-edd2-44d2-901c-1057676cfbb0" />
-
-
 
