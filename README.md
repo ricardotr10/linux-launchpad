@@ -68,7 +68,7 @@ click derecho y pon editar aplicacion
 
 <img width="375" height="402" alt="Captura de pantalla_2026-04-04_07-29-17" src="https://github.com/user-attachments/assets/76698ae9-0a09-4502-95df-f0f63e4481db" />
 
-asignas el icono que guardaste el ![Launchpad.png](https://github.com/ricardotr10/linux-launchpad/blob/main/Launchpad.png) , lo guardas y lo arrastras al plank:
+asignas el icono que guardaste el [Launchpad.png](https://github.com/ricardotr10/linux-launchpad/blob/main/Launchpad.png) , lo guardas y lo arrastras al plank:
 
 <img width="558" height="295" alt="Captura de pantalla_2026-04-04_07-33-36" src="https://github.com/user-attachments/assets/bba0536e-edd2-44d2-901c-1057676cfbb0" />
 
