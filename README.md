@@ -74,3 +74,5 @@ asignas el icono que guardaste el [Launchpad.png](https://github.com/ricardotr10
 
 <img width="558" height="295" alt="Captura de pantalla_2026-04-04_07-33-36" src="https://github.com/user-attachments/assets/bba0536e-edd2-44d2-901c-1057676cfbb0" />
 
+<img width="1920" height="1080" alt="imagen" src="https://github.com/user-attachments/assets/19893250-9bfa-474f-8fb6-22e17de12121" />
+
