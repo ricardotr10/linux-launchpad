@@ -1,143 +1,147 @@
 configuration {
+    /* 📂 ACTIVACIÓN DE MODOS */
+    modi: "drun,filebrowser";
     show-icons: true;
-    display-drun: "";
+    display-drun: "🚀 Apps";
+    display-filebrowser: "🏠 Home";
     drun-display-format: "{name}";
-    icon-theme: "Papirus";
+    icon-theme: "Papirus"; /* ----------------AQUI CAMBIAS LOS TEMAS SI NO TE GUSTA EL Papirus o WhiteSur---------------- */
+
+    /* ⚡ APERTURA CON UN SOLO CLICK */
+    hover-select: true;              
+    me-select-entry: "";             
+    me-accept-entry: "MousePrimary"; 
+    
+    /* F1/F2 para páginas */
+    kb-page-next: "F1";               
+    kb-page-prev: "F2";               
+
+    /* F3: CAMBIO DE MODO */
+    kb-mode-next: "F3";
+
+    /* 🏠 RESET A HOME AUTOMÁTICO */
+    filebrowser {
+        directory: "/home/ricardo-linux-pc/";  /* ----------------AQUI CAMBIAS LA RUTA PARA RESETEAR---------------- */
+        directories-first: true;
+        sorting-method: "name";
+    }
 }
 
 /* =========================
-   🌟 Ventana estilo Apple
+   🌟 Ventana Principal (Launchpad Canvas)
    ========================= */
 window {
     location: center;
     anchor: center;
-    width: 75%;  /* Ancho más contenido, muy macOS */
-    height: 75%; /* Alto más contenido, muy macOS */
+    width: 95%;  /* ----------------------ANCHO DEL CONTENEDOR---------------------- */
+    height: 85%; /* ----------------------ALTURA DEL CONTENEDOR---------------------- */
     transparency: "real";
-    
-    /* Fondo oscuro pero suave (Space Gray) */
-    background-color: rgba(28, 28, 30, 0.75); //transparencia del fondo del launchpad
-    border-radius: 28px; /* Bordes muy redondeados */
+    background-color: rgba(28, 28, 30, 0.75); /* ----------------------FONDO DEL CONTENEDOR---------------------- */
+    border-radius: 36px; 
     border: 1px;
-    /* Borde fino superior para dar relieve */
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.12); /* ----------------------MARCO DEL CONTENEDOR---------------------- */
 }
 
 /* =========================
    📦 Contenedor principal
    ========================= */
 mainbox {
-    padding: 30px 40px;
-    spacing: 0px; /* Al poner 0, controlas tú el espacio con el margin */
+    padding: 30px 60px; 
+    spacing: 0px;
     background-color: transparent;
     children: [ inputbar, listview, textbox-dots ]; 
 }
 
 /* =========================
-   🔍 Barra de búsqueda (Estilo Spotlight Compacto)
+   🔍 Barra de búsqueda (Spotlight Style)
    ========================= */
 inputbar {
-    padding: 10px 16px;
-    /* Aumentamos los márgenes laterales (el segundo valor) para achicarla */
-    /* Formato: arriba, derecha, abajo, izquierda */
-    margin: 0px 25% 10px 25%; 
-    
-    border-radius: 12px;
+    padding: 12px 22px;
+    margin: 0px 25% 25px 25%; 
+    border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.08); 
     border: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.06);
     children: [ prompt, entry ];
 }
 
 prompt {
     enabled: true;
-    text: "🔍";
-    text-color: rgba(255, 255, 255, 0.5);
-    padding: 0px 8px 0px 4px;
+    text-color: rgba(255, 255, 255, 0.4);
+    padding: 0px 10px 0px 4px;
     background-color: transparent;
+    font: "Sans Semibold 11";
 }
 
 entry {
-    placeholder: "Search";
+    placeholder: "Buscar...";
     placeholder-color: rgba(255, 255, 255, 0.2);
     text-color: #FFFFFF;
-    font: "Sans 13"; /* Fuente un poco más grande y limpia */
+    font: "Sans 14";
     background-color: transparent;
 }
 
 /* =========================
-   🗂️ Grid de aplicaciones (Launchpad style)
+   🗂️ Grid de aplicaciones / archivos (3 FILAS)
    ========================= */
 listview {
-    columns: 5;
-    lines: 3;
-    spacing: 25px;
+    columns: 6; 
+    lines: 3;  
+    spacing: 50px; 
     cycle: true;
     dynamic: true;
     scrollbar: false;
     background-color: transparent;
-    
-    /* ESTO FIJA EL ESPACIO DEL GRID */
     fixed-height: true; 
-    /* OPCIONAL: Si quieres que el scroll mueva páginas enteras */
-    page-step: true;    
+    fixed-columns: true;
 }
 
 /* =========================
-    🔵 Indicador de Páginas (Sin espacio extra)
+   🎨 Elementos (Iconos)
+   ========================= */
+element {
+    orientation: vertical;
+    padding: 15px 0px; 
+    border-radius: 28px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+element selected {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1.5px;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+element-icon {
+    size: 100px; 
+    horizontal-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    padding-top: 10px;
+    horizontal-align: 0.5;
+    text-color: rgba(255, 255, 255, 0.95); 
+    font: "Sans 10";
+    background-color: transparent;
+}
+
+element-text selected {
+    text-color: #FFFFFF;
+    font: "Sans Semibold 10";
+}
+
+/* =========================
+   🔵 Indicador de Páginas
    ========================= */
 textbox-dots {
     expand: false;
     str: "•  ●  •"; 
     horizontal-align: 0.5;
     vertical-align: 0.5;
-    
-    padding: 0px;
-    /* Margen negativo arriba para pegarlo a los iconos */
-    /* Margen abajo para que no empuje la ventana */
-    margin: -20px 0px 10px 0px; 
-    
+    padding: 15px 0px 0px 0px; 
     background-color: transparent;
-    text-color: rgba(255, 255, 255, 0.4);
-    font: "Sans 24"; /* Grandes y claros */
-}
-
-/* =========================
-   🎨 Elementos (Suaves y táctiles)
-   ========================= */
-element {
-    orientation: vertical;
-    padding: 20px 10px;
-    border-radius: 20px;
-    background-color: transparent;
-}
-
-/* Selección: Brillo sutil, no invasivo */
-element selected {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Sin borde o con uno muy suave para un look premium */
-    border: 1px;
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-/* ICONO DENTRO DEL LAUNCHPAD*/
-element-icon {
-    size: 72px; /* Iconos grandes y claros */
-    horizontal-align: 0.5;
-    background-color: transparent;
-}
-
-element-text {
-    padding-top: 12px;
-    horizontal-align: 0.5;
-    /* Texto en blanco suave para evitar fatiga visual */
-    text-color: rgba(255, 255, 255, 0.85); 
-    font: "Sans 11";
-    background-color: transparent;
-}
-
-/* En macOS, el texto seleccionado suele brillar o ponerse blanco puro */
-element-text selected {
-    text-color: #FFFFFF;
-    font: "Sans Semibold 11";
+    text-color: rgba(255, 255, 255, 0.25);
+    font: "Sans 28";
 }
