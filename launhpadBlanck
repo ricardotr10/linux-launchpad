@@ -1,0 +1,156 @@
+configuration {
+    /* 📂 ACTIVACIÓN DE MODOS */
+    modi: "drun,filebrowser";
+    show-icons: true;
+    display-drun: "🚀 Apps";
+    display-filebrowser: "🏠 Home";
+    drun-display-format: "{name}";
+    icon-theme: "WhiteSur"; 
+
+    /* ⚡ APERTURA CON UN SOLO CLICK */
+    hover-select: true;              
+    me-select-entry: "";             
+    me-accept-entry: "MousePrimary"; 
+    
+    /* F1/F2 para páginas */
+    kb-page-next: "F1";               
+    kb-page-prev: "F2";               
+
+    /* F3: CAMBIO DE MODO */
+    kb-mode-next: "F3";
+
+    /* 🏠 RESET A HOME AUTOMÁTICO */
+    filebrowser {
+        directory: "/home/ricardo-linux-pc/"; 
+        directories-first: true;
+        sorting-method: "name";
+    }
+}
+
+/* =========================
+   🌟 Ventana Principal (Invertido a Claro)
+   ========================= */
+window {
+    location: center;
+    anchor: center;
+    width: 95%;  
+    height: 85%; 
+    transparency: "real";
+    /* Fondo claro con ligera opacidad */
+    background-color: rgba(239, 239, 240, 0.86); 
+    border-radius: 36px; 
+    border: 1px;
+    /* Marco gris suave */
+    border-color: rgba(0, 0, 0, 0.1); 
+}
+
+/* =========================
+   📦 Contenedor principal
+   ========================= */
+mainbox {
+    padding: 30px 60px; 
+    spacing: 0px;
+    background-color: transparent;
+    children: [ inputbar, listview, textbox-dots ]; 
+}
+
+/* =========================
+   🔍 Barra de búsqueda (Estilo Claro)
+   ========================= */
+inputbar {
+    padding: 12px 22px;
+    margin: 0px 25% 25px 25%; 
+    border-radius: 15px;
+    /* Fondo gris tenue para la barra */
+    background-color: rgba(0, 0, 0, 0.05); 
+    border: 1px;
+    border-color: rgba(0, 0, 0, 0.05);
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+    /* Texto gris oscuro */
+    text-color: rgba(0, 0, 0, 0.5);
+    padding: 0px 10px 0px 4px;
+    background-color: transparent;
+    font: "Sans Semibold 11";
+}
+
+entry {
+    placeholder: "Buscar...";
+    /* Placeholder sutil */
+    placeholder-color: rgba(0, 0, 0, 0.3);
+    /* Texto principal negro */
+    text-color: #1a1a1a;
+    font: "Sans 14";
+    background-color: transparent;
+}
+
+/* =========================
+   🗂️ Grid de aplicaciones / archivos
+   ========================= */
+listview {
+    columns: 6; 
+    lines: 3;  
+    spacing: 50px; 
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    background-color: transparent;
+    fixed-height: true; 
+    fixed-columns: true;
+}
+
+/* =========================
+   🎨 Elementos (Iconos)
+   ========================= */
+element {
+    orientation: vertical;
+    padding: 15px 0px; 
+    border-radius: 28px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+element selected {
+    /* Selección en gris claro */
+    background-color: rgba(0, 0, 0, 0.08);
+    border: 1.5px;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+element-icon {
+    size: 100px; 
+    horizontal-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    padding-top: 10px;
+    horizontal-align: 0.5;
+    /* Texto oscuro para fondo claro */
+    text-color: rgba(0, 0, 0, 0.8); 
+    font: "Sans 10";
+    background-color: transparent;
+}
+
+element-text selected {
+    text-color: #000000;
+    font: "Sans Semibold 10";
+}
+
+/* =========================
+   🔵 Indicador de Páginas
+   ========================= */
+textbox-dots {
+    expand: false;
+    str: "•  ●  •"; 
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    padding: 15px 0px 0px 0px; 
+    background-color: transparent;
+    /* Puntos en gris oscuro */
+    text-color: rgba(0, 0, 0, 0.3);
+    font: "Sans 28";
+}
