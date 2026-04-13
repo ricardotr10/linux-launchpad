@@ -1,147 +1,170 @@
+/*
+ * Rofi Configuration - Dark macOS Inspired
+ * Author: Ricardo
+ * Theme: Dark Frosted Glass
+ * Features: Drun, File Browser, Icons, Single Click
+ */
+
 configuration {
-    /* 📂 ACTIVACIÓN DE MODOS */
+    /* Módulos y comportamiento */
     modi: "drun,filebrowser";
     show-icons: true;
-    display-drun: "🚀 Apps";
-    display-filebrowser: "🏠 Home";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+
+    /* Iconos y formato - Agregado APPS y FILES */
+    display-drun: " APPS";
+    display-filebrowser: " FILES";
     drun-display-format: "{name}";
-    icon-theme: "Papirus"; /* ----------------AQUI CAMBIAS LOS TEMAS SI NO TE GUSTA EL Papirus o WhiteSur---------------- */
+    icon-theme: "WhiteSur"; /* ----------------AQUI CAMBIAS LOS TEMAS SI NO TE GUSTA EL Papirus o WhiteSur---------------- */
 
-    /* ⚡ APERTURA CON UN SOLO CLICK */
-    hover-select: true;              
-    me-select-entry: "";             
-    me-accept-entry: "MousePrimary"; 
-    
-    /* F1/F2 para páginas */
-    kb-page-next: "F1";               
-    kb-page-prev: "F2";               
-
-    /* F3: CAMBIO DE MODO */
+    /* Navegación por teclado */
+    kb-page-next: "F1";
+    kb-page-prev: "F2";
     kb-mode-next: "F3";
 
-    /* 🏠 RESET A HOME AUTOMÁTICO */
+    /* Configuración del navegador de archivos */
     filebrowser {
-        directory: "/home/ricardo-linux-pc/";  /* ----------------AQUI CAMBIAS LA RUTA PARA RESETEAR---------------- */
+        directory: "/home/ricardo-linux-pc/"; /* ----------------AQUI CAMBIAS LA RUTA PARA RESETEAR---------------- */
         directories-first: true;
         sorting-method: "name";
     }
 }
 
 /* =========================
-   🌟 Ventana Principal (Launchpad Canvas)
+    🖼️ Ventana Principal (Fondo Oscuro Semi-Transparente)
    ========================= */
 window {
     location: center;
     anchor: center;
-    width: 95%;  /* ----------------------ANCHO DEL CONTENEDOR---------------------- */
-    height: 85%; /* ----------------------ALTURA DEL CONTENEDOR---------------------- */
+    width: 85%; /* ----------------------ANCHO DEL CONTENEDOR---------------------- */
+    height: 78%;  /* ----------------------ALTURA DEL CONTENEDOR---------------------- */
     transparency: "real";
     background-color: rgba(28, 28, 30, 0.75); /* ----------------------FONDO DEL CONTENEDOR---------------------- */
-    border-radius: 36px; 
+    border-radius: 24px;
     border: 1px;
-    border-color: rgba(255, 255, 255, 0.12); /* ----------------------MARCO DEL CONTENEDOR---------------------- */
+    border-color: rgba(255, 255, 255, 0.06); /* ----------------------MARCO DEL CONTENEDOR---------------------- */
 }
 
 /* =========================
-   📦 Contenedor principal
+    📦 Contenedor Principal
    ========================= */
 mainbox {
-    padding: 30px 60px; 
-    spacing: 0px;
-    background-color: transparent;
-    children: [ inputbar, listview, textbox-dots ]; 
+    padding: 30px 60px;
+    spacing: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    children: [ inputbar, mode-switcher, listview, textbox-dots ];
 }
 
 /* =========================
-   🔍 Barra de búsqueda (Spotlight Style)
+    🔍 Barra de Búsqueda
    ========================= */
 inputbar {
     padding: 12px 22px;
-    margin: 0px 25% 25px 25%; 
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.08); 
+    margin: 0px 20% 0px 20%;
+    border-radius: 12px;
+    background-color: rgba(60, 60, 65, 0.7);
     border: 1px;
-    border-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
     children: [ prompt, entry ];
 }
 
 prompt {
     enabled: true;
-    text-color: rgba(255, 255, 255, 0.4);
-    padding: 0px 10px 0px 4px;
-    background-color: transparent;
-    font: "Sans Semibold 11";
+    text-color: #007AFF; /* Azul estilo macOS */
+    padding: 0px 12px 0px 4px;
+    background-color: rgba(0, 0, 0, 0);
+    font: "SF Pro Semibold 12";
 }
 
 entry {
     placeholder: "Buscar...";
-    placeholder-color: rgba(255, 255, 255, 0.2);
+    placeholder-color: rgba(170, 170, 175, 0.7);
     text-color: #FFFFFF;
-    font: "Sans 14";
-    background-color: transparent;
+    font: "SF Pro 13";
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* =========================
-   🗂️ Grid de aplicaciones / archivos (3 FILAS)
+    🖱️ Selector de Modo (BOTONES MEJORADOS)
+   ========================= */
+mode-switcher {
+    spacing: 15px;
+    margin: 0px 30%; 
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button {
+    padding: 10px 24px; 
+    border-radius: 10px;
+    background-color: rgba(60, 60, 65, 0.5);
+    text-color: rgba(255, 255, 255, 0.8);
+    font: "SF Pro Semibold 13"; 
+    cursor: pointer;
+}
+
+button selected {
+    background-color: rgba(0, 122, 255, 0.25);
+    text-color: #007AFF;
+    border: 1px;
+    border-color: rgba(0, 122, 255, 0.3);
+}
+
+/* =========================
+    🗂️ Grid de Aplicaciones
    ========================= */
 listview {
-    columns: 6; 
-    lines: 3;  
-    spacing: 50px; 
+    columns: 6;
+    lines: 3;
+    spacing: 40px;
     cycle: true;
     dynamic: true;
     scrollbar: false;
-    background-color: transparent;
-    fixed-height: true; 
+    background-color: rgba(0, 0, 0, 0);
+    fixed-height: true;
     fixed-columns: true;
 }
 
 /* =========================
-   🎨 Elementos (Iconos)
+    🎨 Elementos del Grid
    ========================= */
 element {
     orientation: vertical;
-    padding: 15px 0px; 
-    border-radius: 28px;
-    background-color: transparent;
-    cursor: pointer;
+    padding: 20px 0px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0);
+    spacing: 15px;
 }
 
 element selected {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1.5px;
-    border-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(60, 60, 65, 0.5);
+    border: 1px;
+    border-color: rgba(0, 122, 255, 0.2);
 }
 
 element-icon {
-    size: 100px; 
+    size: 80px;
     horizontal-align: 0.5;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 element-text {
-    padding-top: 10px;
     horizontal-align: 0.5;
-    text-color: rgba(255, 255, 255, 0.95); 
-    font: "Sans 10";
-    background-color: transparent;
-}
-
-element-text selected {
-    text-color: #FFFFFF;
-    font: "Sans Semibold 10";
+    text-color: rgba(255, 255, 255, 0.9);
+    font: "SF Pro 11"; /* ----------------CAMBIAR LETRA---------------- */
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* =========================
-   🔵 Indicador de Páginas
+    🔵 Indicador de Páginas
    ========================= */
 textbox-dots {
     expand: false;
-    str: "•  ●  •"; 
+    str: "━━  ●  ━━";
     horizontal-align: 0.5;
-    vertical-align: 0.5;
-    padding: 15px 0px 0px 0px; 
-    background-color: transparent;
-    text-color: rgba(255, 255, 255, 0.25);
-    font: "Sans 28";
+    padding: 20px 0px 0px 0px;
+    background-color: rgba(0, 0, 0, 0);
+    text-color: rgba(255, 255, 255, 0.5);
+    font: "SF Pro 14";
 }
