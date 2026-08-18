@@ -40,7 +40,7 @@ mkdir -p ~/.config/rofi
 ```ini
 nano ~/.config/rofi/launchpad.rasi
 ```
-  y pegas el codigo .rasi
+  y pegas el codigo .rasi ya sea el dark o light, es necesario cambiar los temas dependiendo del sistema si es white-sur, etc
 
 ## ▶️ Ejecutar Launchpad
 
